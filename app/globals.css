@@ -13,7 +13,7 @@ html {
   text-size-adjust: 100%;
 }
 
-/* Override Tailwind's problematic -webkit-text-size-adjust */
+/* Override Tailwind's problematic text-size-adjust */
 html,
 :host {
   -webkit-text-size-adjust: 100%;
