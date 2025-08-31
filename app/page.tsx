@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Monitor, Camera, Volume2, Zap, Shield, Clock, Users, MapPin, Phone, Mail } from 'lucide-react';
+import { Monitor, Camera, Volume2, Zap, Shield, Clock, Users, MapPin, Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Inicio',
@@ -212,6 +212,7 @@ export default function HomePage() {
       </section>
 
       {/* Datos estructurados JSON-LD */}
+      {/* eslint-disable-next-line react/no-danger */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
