@@ -5,6 +5,9 @@
     },
   ],
   "settings": {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "codingcopilot.modelResponseLanguage": "English",
+    "codingcopilot.modelDocumentLanguage": "English",
+    "codingcopilot.commitMessageLanguage": "en"
   },
 }
