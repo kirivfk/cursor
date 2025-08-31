@@ -9,17 +9,15 @@
 
 html {
   scroll-behavior: smooth;
-  /* Use vendor prefixes for better browser compatibility */
+  /* Use text-size-adjust with webkit prefix for broader browser support */
   -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
-/* Override Tailwind's problematic text-size-adjust with vendor prefixes */
+/* Override Tailwind's problematic text-size-adjust with modern approach */
 html,
 :host {
   -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
