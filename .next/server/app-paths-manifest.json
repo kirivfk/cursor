@@ -1,9 +1,6 @@
 {
-  "/page": "app/page.js",
-  "/servicios/sonido/page": "app/servicios/sonido/page.js",
-  "/servicios/informatica/page": "app/servicios/informatica/page.js",
-  "/proyectos/page": "app/proyectos/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/quienes-somos/page": "app/quienes-somos/page.js",
-  "/blog/page": "app/blog/page.js"
+  "/blog/page": "app/blog/page.js",
+  "/servicios/informatica/page": "app/servicios/informatica/page.js",
+  "/page": "app/page.js"
 }
