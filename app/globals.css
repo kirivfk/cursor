@@ -1,3 +1,4 @@
+/* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,15 +9,13 @@
 
 html {
   scroll-behavior: smooth;
-  /* Fix for text-size-adjust compatibility issue */
-  -webkit-text-size-adjust: 100%;
+  /* Use only the standard property for better browser compatibility */
   text-size-adjust: 100%;
 }
 
 /* Override Tailwind's problematic text-size-adjust */
 html,
 :host {
-  -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
