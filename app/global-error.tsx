@@ -32,13 +32,14 @@ export default function GlobalError({
               </p>
             </div>
             
-            <button
-              onClick={reset}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); reset(); }}
               className="inline-flex items-center justify-center w-full bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-700 transition-colors duration-200"
             >
               <RefreshCw className="w-5 h-5 mr-2" />
               Recargar página
-            </button>
+            </a>
             
             <div className="mt-8 text-sm text-gray-500 dark:text-gray-400">
               <p>Si el problema persiste, contacta con nosotros:</p>

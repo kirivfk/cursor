@@ -32,13 +32,14 @@ export default function Error({
         </div>
         
         <div className="space-y-4">
-          <button
-            onClick={reset}
+          <a
+            href="#"
+            onClick={(e) => { e.preventDefault(); reset(); }}
             className="inline-flex items-center justify-center w-full bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-700 transition-colors duration-200"
           >
             <RefreshCw className="w-5 h-5 mr-2" />
             Intentar de nuevo
-          </button>
+          </a>
           
           <Link
             href="/"

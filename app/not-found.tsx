@@ -24,13 +24,13 @@ export default function NotFound() {
             Volver al inicio
           </Link>
           
-          <button
-            onClick={() => window.history.back()}
+          <a
+            href="javascript:history.back()"
             className="inline-flex items-center justify-center w-full bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors duration-200"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Volver atrás
-          </button>
+          </a>
         </div>
         
         <div className="mt-8 text-sm text-gray-500 dark:text-gray-400">
