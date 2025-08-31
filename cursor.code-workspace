@@ -11,6 +11,7 @@
     "git.ignoreLimitWarning": true,
     "codingcopilot.modelResponseLanguage": "English",
     "codingcopilot.modelDocumentLanguage": "English",
-    "codingcopilot.commitMessageLanguage": "en"
+    "codingcopilot.commitMessageLanguage": "en",
+    "liveServer.settings.multiRootWorkspaceName": "Nueva carpeta"
   },
 }
