@@ -30,8 +30,14 @@
 }
 
 html {
-  scroll-behavior: smooth;
   font-size: 16px;
+}
+
+/* Smooth scrolling with fallback for older browsers */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
