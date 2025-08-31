@@ -348,3 +348,196 @@ a:hover {
     }
   }
 }
+
+/* Estilos para el contenido del blog */
+.markdown-content {
+  @apply text-gray-800 dark:text-gray-200;
+}
+
+.markdown-content h1 {
+  @apply text-4xl font-bold mb-6 mt-8 text-primary dark:text-white;
+}
+
+.markdown-content h2 {
+  @apply text-3xl font-bold mb-4 mt-8 text-primary dark:text-white;
+}
+
+.markdown-content h3 {
+  @apply text-2xl font-semibold mb-3 mt-6 text-primary dark:text-white;
+}
+
+.markdown-content h4 {
+  @apply text-xl font-semibold mb-3 mt-6 text-primary dark:text-white;
+}
+
+.markdown-content p {
+  @apply mb-4 leading-relaxed;
+}
+
+.markdown-content ul {
+  @apply mb-4 pl-6;
+}
+
+.markdown-content ol {
+  @apply mb-4 pl-6;
+}
+
+.markdown-content li {
+  @apply mb-2;
+}
+
+.markdown-content strong {
+  @apply font-semibold text-gray-900 dark:text-white;
+}
+
+.markdown-content em {
+  @apply italic;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-accent pl-4 py-2 my-6 bg-gray-50 dark:bg-slate-800 italic;
+}
+
+.markdown-content code {
+  @apply bg-gray-100 dark:bg-slate-700 px-2 py-1 rounded text-sm font-mono;
+}
+
+.markdown-content pre {
+  @apply bg-gray-100 dark:bg-slate-700 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.markdown-content pre code {
+  @apply bg-transparent p-0;
+}
+
+.markdown-content a {
+  @apply text-accent hover:text-accent-700 underline;
+}
+
+.markdown-content table {
+  @apply w-full border-collapse border border-gray-300 dark:border-slate-600 mb-4;
+}
+
+.markdown-content th {
+  @apply border border-gray-300 dark:border-slate-600 px-4 py-2 bg-gray-100 dark:bg-slate-700 font-semibold;
+}
+
+.markdown-content td {
+  @apply border border-gray-300 dark:border-slate-600 px-4 py-2;
+}
+
+.markdown-content hr {
+  @apply border-gray-300 dark:border-slate-600 my-8;
+}
+
+/* Estilos para las tarjetas del blog */
+.blog-card {
+  @apply bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-slate-700;
+}
+
+.blog-card:hover {
+  @apply transform -translate-y-1;
+}
+
+/* Estilos para las categorías */
+.category-badge {
+  @apply inline-block px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.category-seguridad {
+  @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200;
+}
+
+.category-electricidad {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+}
+
+.category-informatica {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+}
+
+.category-sonido {
+  @apply bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200;
+}
+
+/* Estilos para el hero del blog */
+.blog-hero {
+  @apply relative bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 py-20 px-4 overflow-hidden;
+}
+
+.blog-hero-image {
+  @apply absolute inset-0 object-cover opacity-10;
+}
+
+.blog-hero-content {
+  @apply relative max-w-4xl mx-auto;
+}
+
+/* Estilos para el contenido del artículo */
+.article-content {
+  @apply max-w-4xl mx-auto py-16 px-4;
+}
+
+.article-prose {
+  @apply prose prose-lg dark:prose-invert max-w-none;
+}
+
+/* Estilos para el CTA del artículo */
+.article-cta {
+  @apply mt-16 bg-accent rounded-2xl p-8 text-white text-center;
+}
+
+/* Estilos para el newsletter */
+.newsletter-section {
+  @apply mt-20 bg-gradient-to-r from-accent to-accent-600 rounded-2xl p-8 text-white text-center;
+}
+
+/* Estilos para los metadatos */
+.article-metadata {
+  @apply flex items-center text-gray-600 dark:text-gray-300 space-x-6;
+}
+
+.metadata-item {
+  @apply flex items-center;
+}
+
+.metadata-icon {
+  @apply w-5 h-5 mr-2;
+}
+
+/* Estilos para la navegación del blog */
+.blog-navigation {
+  @apply flex items-center text-accent hover:text-accent-700 transition-colors;
+}
+
+.blog-navigation-icon {
+  @apply w-5 h-5 mr-2;
+}
+
+/* Estilos para las imágenes del blog */
+.blog-image {
+  @apply relative h-48 overflow-hidden;
+}
+
+.blog-image img {
+  @apply object-cover hover:scale-105 transition-transform duration-300;
+}
+
+/* Estilos para el grid de artículos */
+.blog-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+/* Estilos para los extractos */
+.blog-excerpt {
+  @apply text-gray-600 dark:text-gray-300 mb-4 line-clamp-3;
+}
+
+/* Estilos para los botones de acción */
+.blog-action-button {
+  @apply inline-flex items-center text-accent hover:text-accent-700 font-medium transition-colors;
+}
+
+.blog-action-icon {
+  @apply w-4 h-4 ml-2;
+}
