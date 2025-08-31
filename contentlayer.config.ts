@@ -1,9 +1,3 @@
-// Nota: El error indica que no se encuentra el módulo "contentlayer/source-files".
-// Asegúrate de tener instalado el paquete 'contentlayer' y que la ruta sea correcta.
-// Si usas TypeScript, puede que necesites instalar los tipos de Contentlayer o agregar una declaración de módulo personalizada.
-// Asegúrate de tener instalado el paquete 'contentlayer' y 'contentlayer/source-files' ejecutando:
-// npm install contentlayer contentlayer/source-files
-
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 
 const Servicio = defineDocumentType(() => ({
@@ -35,7 +29,7 @@ const Blog = defineDocumentType(() => ({
     schema: { type: 'json', required: false },
   },
   computedFields: {
-    url: { type: 'string', resolve: doc => `/blog/${doc.slug}` },
+    url: { type: 'string', resolve: (doc: any) => `/blog/${doc.slug}` },
   },
 }));
 
@@ -47,7 +41,7 @@ const Legal = defineDocumentType(() => ({
     slug: { type: 'string', required: true },
   },
   computedFields: {
-    url: { type: 'string', resolve: doc => `/legal/${doc.slug}` },
+    url: { type: 'string', resolve: (doc: any) => `/legal/${doc.slug}` },
   },
 }));
 

@@ -8,12 +8,24 @@ export default function Header() {
       </div>
       <nav aria-label="Navegación principal">
         <ul className="flex gap-6">
-          <li><Link href="/">Inicio</Link></li>
-          <li><Link href="/servicios">Servicios</Link></li>
-          <li><Link href="/proyectos">Proyectos</Link></li>
-          <li><Link href="/blog">Blog</Link></li>
-          <li><Link href="/quienes-somos">Quiénes somos</Link></li>
-          <li><Link href="/contacto">Contacto</Link></li>
+          <li>
+            <Link href="/">Inicio</Link>
+          </li>
+          <li>
+            <Link href="/servicios">Servicios</Link>
+          </li>
+          <li>
+            <Link href="/proyectos">Proyectos</Link>
+          </li>
+          <li>
+            <Link href="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link href="/quienes-somos">Quiénes somos</Link>
+          </li>
+          <li>
+            <Link href="/contacto">Contacto</Link>
+          </li>
         </ul>
       </nav>
     </header>
