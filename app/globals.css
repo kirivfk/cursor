@@ -355,7 +355,7 @@ a:hover {
 }
 
 .markdown-content h1 {
-  @apply text-4xl font-bold mb-6 mt-8 text-primary dark:text-white;
+  @apply text-4xl font-bold mb-6 mt-8 text-primary-800 dark:text-white;
 }
 
 .markdown-content h2 {
