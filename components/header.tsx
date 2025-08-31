@@ -40,17 +40,18 @@ export default function Header() {
       </div>
 
       {/* Header principal */}
-      <div className="max-w-6xl mx-auto px-4 py-4 bg-white dark:bg-slate-800 rounded-lg mx-4 my-2 shadow-lg">
+      <div className="max-w-6xl mx-auto px-4 py-4 bg-slate-800 dark:bg-slate-800 rounded-lg mx-4 my-2 shadow-lg">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-16 h-16 bg-accent rounded-lg flex items-center justify-center group-hover:bg-blue-700 transition-colors">
-              <span className="text-white font-bold text-2xl">D</span>
-            </div>
-            <div>
-              <span className="font-bold text-xl text-primary dark:text-white">Duartec</span>
-              <div className="text-xs text-gray-600 dark:text-gray-400">Instalaciones Informáticas</div>
-            </div>
+            <Image 
+              src="/images/logo.png" 
+              alt="Duartec Instalaciones Informáticas" 
+              width={64}
+              height={64}
+              className="h-16 w-auto group-hover:opacity-80 transition-opacity"
+              priority
+            />
           </Link>
 
           {/* Navegación desktop */}
@@ -59,7 +60,7 @@ export default function Header() {
               <li>
                 <Link 
                   href="/" 
-                  className="text-primary dark:text-white hover:text-accent dark:hover:text-accent transition-colors font-medium"
+                  className="text-white hover:text-accent transition-colors font-medium"
                 >
                   Inicio
                 </Link>
@@ -67,7 +68,7 @@ export default function Header() {
               <li>
                 <Link 
                   href="/servicios" 
-                  className="text-primary dark:text-white hover:text-accent dark:hover:text-accent transition-colors font-medium"
+                  className="text-white hover:text-accent transition-colors font-medium"
                 >
                   Servicios
                 </Link>
@@ -75,7 +76,7 @@ export default function Header() {
               <li>
                 <Link 
                   href="/proyectos" 
-                  className="text-primary dark:text-white hover:text-accent dark:hover:text-accent transition-colors font-medium"
+                  className="text-white hover:text-accent transition-colors font-medium"
                 >
                   Proyectos
                 </Link>
@@ -83,7 +84,7 @@ export default function Header() {
               <li>
                 <Link 
                   href="/blog" 
-                  className="text-primary dark:text-white hover:text-accent dark:hover:text-accent transition-colors font-medium"
+                  className="text-white hover:text-accent transition-colors font-medium"
                 >
                   Blog
                 </Link>
@@ -91,7 +92,7 @@ export default function Header() {
               <li>
                 <Link 
                   href="/quienes-somos" 
-                  className="text-primary dark:text-white hover:text-accent dark:hover:text-accent transition-colors font-medium"
+                  className="text-white hover:text-accent transition-colors font-medium"
                 >
                   Quiénes somos
                 </Link>
@@ -110,7 +111,7 @@ export default function Header() {
           {/* Botón menú móvil */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 text-primary dark:text-white hover:text-accent dark:hover:text-accent transition-colors"
+            className="md:hidden p-2 text-white hover:text-accent transition-colors"
             aria-label="Abrir menú de navegación"
 
           >
