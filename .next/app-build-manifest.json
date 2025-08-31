@@ -1,45 +1,95 @@
 {
   "pages": {
-    "/global-error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/global-error.js"
+    "/not-found": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/not-found-67037cf2b44ba312.js"
     ],
-    "/quienes-somos/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/quienes-somos/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/_not-found/page-51d845c2e8a8a05d.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/css/efa847d005e074a9.css",
+      "static/chunks/app/layout-ad513dd3ac79d9f7.js"
     ],
     "/error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/error.js"
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/error-50df51e436c55b39.js"
     ],
-    "/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+    "/global-error": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/global-error-b6bdb7d204c5b9ef.js"
     ],
     "/blog/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/blog/page.js"
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/blog/page-0ec1da9bc22f21f3.js"
     ],
-    "/servicios/informatica/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/servicios/informatica/page.js"
+    "/contacto/page": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/contacto/page-dddcf0798afca9dc.js"
     ],
     "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/page-c7770ce6b23864f9.js"
+    ],
+    "/servicios/electricidad/page": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/servicios/electricidad/page-ebc932b5e76e798a.js"
+    ],
+    "/proyectos/page": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/proyectos/page-032d7970f776780c.js"
+    ],
+    "/quienes-somos/page": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/quienes-somos/page-f1e92f99d2e2c92f.js"
+    ],
+    "/servicios/sonido/page": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/servicios/sonido/page-2f98d62e8a10ad03.js"
+    ],
+    "/servicios/page": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/servicios/page-8995781ab01eeacd.js"
+    ],
+    "/servicios/informatica/page": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/servicios/informatica/page-da773ad2908729be.js"
+    ],
+    "/servicios/videovigilancia/page": [
+      "static/chunks/webpack-01f95c427723c7be.js",
+      "static/chunks/vendors-9e985b762f3cc798.js",
+      "static/chunks/main-app-9d26274d3fab0a18.js",
+      "static/chunks/app/servicios/videovigilancia/page-d4aca4039e757c86.js"
     ]
   }
 }

@@ -88,7 +88,7 @@ export default function InformaticaPage() {
                 <ul className="space-y-2">
                   {servicio.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></div>
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2" />
                       {feature}
                     </li>
                   ))}

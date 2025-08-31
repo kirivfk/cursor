@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 
@@ -43,9 +44,11 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <img 
+            <Image 
               src="/images/logo.png" 
               alt="Duartec Instalaciones Informáticas" 
+              width={48}
+              height={48}
               className="h-12 w-auto group-hover:opacity-80 transition-opacity"
             />
           </Link>
