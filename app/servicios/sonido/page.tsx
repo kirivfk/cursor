@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Volume2, Music, Mic, Speaker, ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -38,8 +39,17 @@ export default function SonidoPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-50 to-violet-100 dark:from-slate-800 dark:to-slate-900 py-20 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative bg-gradient-to-br from-purple-50 to-violet-100 dark:from-slate-800 dark:to-slate-900 py-20 px-4 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/proyectos/sonido.jpeg"
+            alt="Servicios de Sonido Profesional"
+            layout="fill"
+            objectFit="cover"
+            className="opacity-10"
+          />
+        </div>
+        <div className="relative max-w-6xl mx-auto">
           <div className="flex items-center mb-6">
             <Link 
               href="/servicios"

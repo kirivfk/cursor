@@ -7,6 +7,7 @@ const Servicio = defineDocumentType(() => ({
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
     slug: { type: 'string', required: true },
+    image: { type: 'string', required: false },
     areaServed: { type: 'string', required: false },
     hasOfferCatalog: { type: 'boolean', required: false },
     faq: { type: 'list', of: { type: 'string' }, required: false },
