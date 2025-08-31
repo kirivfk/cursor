@@ -7,20 +7,16 @@
   --font-inter: 'Inter', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-  /* Use text-size-adjust with webkit prefix for broader browser support */
-  -webkit-text-size-adjust: auto;
-  text-size-adjust: auto;
+/* text-size-adjust solo donde haya soporte, sin warnings */
+@supports (-webkit-text-size-adjust: 100%) {
+  html, :host { -webkit-text-size-adjust: 100%; }
 }
 
-/* Override Tailwind's problematic text-size-adjust with modern approach */
-html,
-:host {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+@supports (text-size-adjust: 100%) {
+  html, :host { text-size-adjust: 100%; }
 }
 
+/* ...tus estilos existentes... */
 .skip-to-content {
   position: absolute;
   left: -999px;
