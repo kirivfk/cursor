@@ -1,8 +1,11 @@
 {
   "folders": [
     {
-      "path": ".",
+      "path": "."
     },
+    {
+      "path": "public/Nueva carpeta"
+    }
   ],
   "settings": {
     "git.ignoreLimitWarning": true,
