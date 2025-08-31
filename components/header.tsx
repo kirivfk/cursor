@@ -43,13 +43,11 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center group-hover:bg-blue-700 transition-colors">
-              <span className="text-white font-bold text-lg">D</span>
-            </div>
-            <div>
-              <span className="font-bold text-xl text-primary dark:text-white">Duartec</span>
-              <div className="text-xs text-gray-600 dark:text-gray-400">Instalaciones Informáticas</div>
-            </div>
+            <img 
+              src="/images/logo.png" 
+              alt="Duartec Instalaciones Informáticas" 
+              className="h-12 w-auto group-hover:opacity-80 transition-opacity"
+            />
           </Link>
 
           {/* Navegación desktop */}
