@@ -95,7 +95,7 @@ export default function ProyectosPage() {
                       {proyecto.year}
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-primary dark:text-white">
+                  <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-white">
                     {proyecto.title}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
