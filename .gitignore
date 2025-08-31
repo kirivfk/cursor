@@ -4,3 +4,5 @@
 .turbo/
 coverage/
 .DS_Store
+/
+cursor-work/
