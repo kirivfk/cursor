@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Camera } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -8,10 +9,10 @@ export const metadata: Metadata = {
 };
 
 const cams = [
-  { slug: 'silos', name: 'Santo Domingo de Silos', desc: 'Vista en directo 24/7 de la localidad' },
-  { slug: 'rabanera-del-pinar', name: 'Rabanera del Pinar', desc: 'Cámara panorámica con emisión continua' },
-  { slug: 'pineda-de-la-sierra', name: 'Pineda de la Sierra', desc: 'Streaming en tiempo real del entorno' },
-  { slug: 'huerta-de-arriba', name: 'Huerta de Arriba', desc: 'Emisión 24 horas del municipio' },
+  { slug: 'silos', name: 'Santo Domingo de Silos', youtubeId: 'czwL7LgjyjU' },
+  { slug: 'rabanera-del-pinar', name: 'Rabanera del Pinar', youtubeId: '2FLLNsHmgxc' },
+  { slug: 'pineda-de-la-sierra', name: 'Pineda de la Sierra', youtubeId: 'MqU3cNr22XQ' },
+  { slug: 'huerta-de-arriba', name: 'Huerta de Arriba', youtubeId: 'Kv2HeXZXWaw' },
 ];
 
 export default function StreamingIndexPage() {
@@ -52,14 +53,21 @@ export default function StreamingIndexPage() {
             <Link
               key={c.slug}
               href={`/streaming/${c.slug}`}
-              className="group rounded-xl overflow-hidden bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 shadow hover:shadow-lg transition-shadow"
+              className="group rounded-xl overflow-hidden bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 shadow hover:shadow-lg transition-all"
             >
-              <div className="h-36 bg-gradient-to-br from-sky-200 to-blue-300 dark:from-slate-700 dark:to-slate-600 flex items-center justify-center">
-                <Camera className="w-10 h-10 text-white opacity-90" />
+              <div className="relative h-40">
+                <Image
+                  src={`https://img.youtube.com/vi/${c.youtubeId}/hqdefault.jpg`}
+                  alt={c.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">EN DIRECTO</span>
+                <img src="https://camstreamer.com/favicon-32x32.png" alt="CamStreamer" className="absolute top-3 right-3 w-5 h-5 opacity-90" />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-primary dark:text-white group-hover:text-accent transition-colors">{c.name}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{c.desc}</p>
+                <h3 className="font-semibold text-primary dark:text-white group-hover:text-accent transition-colors line-clamp-1">{c.name}</h3>
+                <p className="text-xs text-gray-500 mt-1">YouTube Live</p>
               </div>
             </Link>
           ))}
@@ -68,4 +76,3 @@ export default function StreamingIndexPage() {
     </div>
   );
 }
-
