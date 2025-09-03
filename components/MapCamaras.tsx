@@ -32,7 +32,6 @@ export default function MapCamaras() {
               <div className="space-y-3 w-72">
                 <div className="flex items-center justify-between">
                   <div className="font-semibold text-primary">{c.name}</div>
-                  <img src="https://camstreamer.com/favicon-32x32.png" alt="CamStreamer" className="w-5 h-5" />
                 </div>
 
                 <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
