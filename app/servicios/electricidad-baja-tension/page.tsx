@@ -77,9 +77,9 @@ export default function BajaTensionPage() {
               <Link href="/contacto" className="inline-block bg-white text-accent font-semibold px-4 py-2 rounded-md text-center hover:bg-gray-100">
                 Contactar ahora
               </Link>
-              <a href="tel:+34947000000" className="inline-block border border-white/70 font-semibold px-4 py-2 rounded-md text-center hover:bg-white hover:text-accent">
-                Llamar 947 000 000
-              </a>
+          <a href="tel:+34947256430" className="inline-block border border-white/70 font-semibold px-4 py-2 rounded-md text-center hover:bg-white hover:text-accent">
+            Llamar 947 256 430
+          </a>
             </div>
           </div>
           <div className="p-6 rounded-xl bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700">
@@ -95,4 +95,3 @@ export default function BajaTensionPage() {
     </div>
   );
 }
-

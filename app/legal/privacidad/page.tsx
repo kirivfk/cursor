@@ -48,7 +48,7 @@ export default function PrivacidadPage() {
                 <li><strong>NIF/CIF:</strong> B00000000</li>
                 <li><strong>Domicilio:</strong> Burgos, España</li>
                 <li><strong>Email:</strong> info@duartec.es</li>
-                <li><strong>Teléfono:</strong> 947 000 000</li>
+                <li><strong>Teléfono:</strong> 947 256 430</li>
               </ul>
             </section>
 
@@ -167,7 +167,7 @@ export default function PrivacidadPage() {
               </p>
               <ul className="list-disc pl-6 text-gray-700 space-y-2">
                 <li><strong>Email:</strong> info@duartec.es</li>
-                <li><strong>Teléfono:</strong> 947 000 000</li>
+                <li><strong>Teléfono:</strong> 947 256 430</li>
                 <li><strong>Dirección:</strong> Burgos, España</li>
               </ul>
             </section>

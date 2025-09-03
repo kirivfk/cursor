@@ -120,7 +120,7 @@ export default function VideovigilanciaPage() {
               Solicitar presupuesto
             </Link>
             <a
-              href="tel:+34947000000"
+              href="tel:+34947256430"
               className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-accent transition-colors duration-200"
             >
               Llamar ahora
