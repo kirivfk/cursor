@@ -13,6 +13,7 @@
     "codingcopilot.modelDocumentLanguage": "English",
     "codingcopilot.commitMessageLanguage": "en",
     "liveServer.settings.multiRootWorkspaceName": "Nueva carpeta",
-    "powershell.cwd": "cursor-main"
+    "powershell.cwd": "cursor-main",
+    "chatgpt.openOnStartup": true
   },
 }
