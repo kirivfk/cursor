@@ -1,5 +1,8 @@
 import { Metadata } from 'next';
 import { Monitor, Camera, Volume2, Zap, Shield, Clock, Users, MapPin, Phone } from 'lucide-react';
+import dynamic from 'next/dynamic';
+
+const MapCamaras = dynamic(() => import('../components/MapCamaras'), { ssr: false });
 
 export const metadata: Metadata = {
   title: 'Inicio',
@@ -147,6 +150,17 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Mapa interactivo de Burgos */}
+      <section className="max-w-6xl mx-auto py-16 px-4">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Mapa Interactivo</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Ubicación de nuestras cámaras en la provincia de Burgos. Pulsa en un punto para abrir la emisión.
+          </p>
+        </div>
+        <MapCamaras />
       </section>
 
       {/* Cámaras en directo 24h */}
