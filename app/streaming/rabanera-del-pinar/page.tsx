@@ -17,10 +17,9 @@ export default function RabaneraCamPage() {
         </div>
       </section>
       <section className="max-w-5xl mx-auto py-8 px-4">
-        <div className="aspect-video w-full rounded-xl overflow-hidden border border-gray-100 dark:border-slate-700 bg-black">
+        <div className="relative w-full h-[60vh] min-h-[380px] max-h-[80vh] rounded-xl overflow-hidden border border-gray-100 dark:border-slate-700 bg-black">
           <iframe
-            width="100%"
-            height="100%"
+            className="absolute inset-0 w-full h-full"
             src="https://www.youtube.com/embed/2FLLNsHmgxc"
             title="Rabanera del Pinar"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -32,4 +31,3 @@ export default function RabaneraCamPage() {
     </div>
   );
 }
-

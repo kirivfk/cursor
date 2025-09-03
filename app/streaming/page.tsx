@@ -55,7 +55,7 @@ export default function StreamingIndexPage() {
               href={`/streaming/${c.slug}`}
               className="group rounded-xl overflow-hidden bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 shadow hover:shadow-lg transition-all"
             >
-              <div className="relative h-40">
+              <div className="relative h-44">
                 <Image
                   src={`https://img.youtube.com/vi/${c.youtubeId}/hqdefault.jpg`}
                   alt={c.name}
@@ -63,7 +63,6 @@ export default function StreamingIndexPage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">EN DIRECTO</span>
-                <img src="https://camstreamer.com/favicon-32x32.png" alt="CamStreamer" className="absolute top-3 right-3 w-5 h-5 opacity-90" />
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-primary dark:text-white group-hover:text-accent transition-colors line-clamp-1">{c.name}</h3>
