@@ -8,26 +8,10 @@ export const metadata: Metadata = {
 };
 
 const cams = [
-  {
-    slug: 'silos',
-    name: 'Santo Domingo de Silos',
-    desc: 'Vista en directo 24/7 de la localidad',
-  },
-  {
-    slug: 'rabanera-del-pinar',
-    name: 'Rabanera del Pinar',
-    desc: 'Cámara panorámica con emisión continua',
-  },
-  {
-    slug: 'pineda-de-la-sierra',
-    name: 'Pineda de la Sierra',
-    desc: 'Streaming en tiempo real del entorno',
-  },
-  {
-    slug: 'huerta-de-arriba',
-    name: 'Huerta de Arriba',
-    desc: 'Emisión 24 horas del municipio',
-  },
+  { slug: 'silos', name: 'Santo Domingo de Silos', desc: 'Vista en directo 24/7 de la localidad' },
+  { slug: 'rabanera-del-pinar', name: 'Rabanera del Pinar', desc: 'Cámara panorámica con emisión continua' },
+  { slug: 'pineda-de-la-sierra', name: 'Pineda de la Sierra', desc: 'Streaming en tiempo real del entorno' },
+  { slug: 'huerta-de-arriba', name: 'Huerta de Arriba', desc: 'Emisión 24 horas del municipio' },
 ];
 
 export default function StreamingIndexPage() {
@@ -46,20 +30,19 @@ export default function StreamingIndexPage() {
         </div>
       </section>
 
-      {/* Reproductor destacado */}
+      {/* Reproductor destacado (YouTube) */}
       <section className="max-w-6xl mx-auto px-4 mt-6">
         <div className="aspect-video w-full rounded-xl overflow-hidden border border-gray-100 dark:border-slate-700 bg-black">
           <iframe
-            src="https://www.duartec.es/silos.php"
-            className="w-full h-full"
-            allow="encrypted-media; picture-in-picture"
-            referrerPolicy="no-referrer"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/2FLLNsHmgxc"
+            title="Rabanera del Pinar"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           />
         </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-3">
-          Si el reproductor no carga, abre la emisión en una pestaña nueva:{' '}
-          <a href="https://www.duartec.es/silos.php" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">ver en duartec.es</a>
-        </p>
       </section>
 
       {/* Grid */}

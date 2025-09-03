@@ -19,19 +19,17 @@ export default function SilosCamPage() {
       <section className="max-w-5xl mx-auto py-8 px-4">
         <div className="aspect-video w-full rounded-xl overflow-hidden border border-gray-100 dark:border-slate-700 bg-black">
           <iframe
-            src="https://www.duartec.es/silos.php"
-            className="w-full h-full"
-            allow="autoplay; encrypted-media"
-            referrerPolicy="no-referrer"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/czwL7LgjyjU"
+            title="Santo Domingo de Silos"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           />
         </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-3">
-          Si el reproductor no carga, abre la emisión en una pestaña nueva: {' '}
-          <a href="https://www.duartec.es/silos.php" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">ver en duartec.es</a>
-        </p>
       </section>
     </div>
   );
 }
-
 
