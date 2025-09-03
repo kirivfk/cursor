@@ -26,7 +26,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contacto"
-              className="inline-flex items-center justify-center bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-accent-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
             >
               <Phone className="w-5 h-5 mr-2" />
               Solicita información

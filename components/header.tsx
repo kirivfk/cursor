@@ -100,7 +100,7 @@ export default function Header() {
               <li>
                 <Link 
                   href="/contacto" 
-                  className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent-700 transition-colors font-medium"
                 >
                   Contacto
                 </Link>
@@ -172,7 +172,7 @@ export default function Header() {
                 <Link 
                   href="/contacto" 
                   onClick={closeMenu}
-                  className="block bg-accent text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium text-center"
+                  className="block bg-accent text-white px-4 py-3 rounded-lg hover:bg-accent-700 transition-colors font-medium text-center"
                 >
                   Contacto
                 </Link>

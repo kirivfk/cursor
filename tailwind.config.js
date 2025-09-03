@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         primary: {
+          DEFAULT: '#1e293b',
           50: '#f8fafc',
           100: '#f1f5f9',
           200: '#e2e8f0',
@@ -27,6 +28,7 @@ module.exports = {
           950: '#020617',
         },
         accent: {
+          DEFAULT: '#2563eb',
           50: '#eff6ff',
           100: '#dbeafe',
           200: '#bfdbfe',
