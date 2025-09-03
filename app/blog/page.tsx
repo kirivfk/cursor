@@ -11,13 +11,13 @@ import { useMemo, useState } from 'react';
 // Color de etiqueta por categoría
 const getCategoryColor = (category: string) => {
   switch (category) {
-    case 'Seguridad':
+    case 'Security':
       return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200';
-    case 'Electricidad':
+    case 'Electricity':
       return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200';
-    case 'Informática':
+    case 'IT':
       return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
-    case 'Sonido':
+    case 'Audio':
       return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200';
     default:
       return 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200';
