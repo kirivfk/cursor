@@ -120,8 +120,9 @@ const nextConfig = {
   // Configuración de base path
   basePath: '',
 
-  // Configuración de asset prefix
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://duartec.es' : '',
+  // Asset prefix: let Vercel/Next handle this automatically
+  // Using a hard-coded domain breaks preview/staging deployments
+  assetPrefix: '',
 
   // Configuración de powered by header
   poweredByHeader: false,
