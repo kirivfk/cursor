@@ -5,11 +5,10 @@ import { Calendar, ArrowLeft, Clock } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import Breadcrumb from '../../../components/Breadcrumb';
 import RelatedPosts from '../../../components/RelatedPosts';
-import { blogPosts } from '../../../lib/blog-data';
+import { allBlogs } from 'contentlayer/generated';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 
-// Los datos del blog se importan desde el archivo centralizado
-
-// Función para obtener el color de la categoría
+// Color por categoría
 const getCategoryColor = (category: string) => {
   switch (category) {
     case 'Seguridad':
@@ -25,10 +24,14 @@ const getCategoryColor = (category: string) => {
   }
 };
 
-// Función para generar metadatos dinámicos
+const estimateReadTime = (text: string) => {
+  const words = text ? text.trim().split(/\s+/).length : 0;
+  const minutes = Math.max(1, Math.round(words / 200));
+  return `${minutes} min`;
+};
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = blogPosts.find((post: any) => post.slug === params.slug);
-  
+  const post = allBlogs.find((p) => p.slug === params.slug);
   if (!post) {
     return {
       title: 'Artículo no encontrado',
@@ -42,17 +45,51 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: post.title,
       description: post.description,
-      images: [post.image],
+      images: [(post as any).image].filter(Boolean) as string[],
     },
   };
 }
 
+type BlogCard = {
+  title: string;
+  slug: string;
+  category: string;
+  image: string;
+  date: string;
+  readTime: string;
+  excerpt: string;
+};
+
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((post: any) => post.slug === params.slug);
-  
+  const post = allBlogs.find((p) => p.slug === params.slug);
   if (!post) {
     notFound();
   }
+
+  const MDXContent = useMDXComponent((post as any).body.code);
+  const readTime = estimateReadTime((post as any).body.raw ?? '');
+
+  const allPosts: BlogCard[] = allBlogs
+    .map((p: any) => ({
+      title: p.title,
+      slug: p.slug,
+      category: p.category ?? 'General',
+      image: p.image ?? '/images/proyectos/CCTV.jpeg',
+      date: p.date,
+      readTime: estimateReadTime(p.body?.raw ?? ''),
+      excerpt: p.description,
+    }))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  const current: BlogCard = {
+    title: post!.title,
+    slug: post!.slug,
+    category: (post as any).category ?? 'General',
+    image: (post as any).image ?? '/images/proyectos/CCTV.jpeg',
+    date: (post as any).date,
+    readTime,
+    excerpt: (post as any).description,
+  };
 
   return (
     <div className="min-h-screen">
@@ -60,8 +97,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <section className="relative bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 py-20 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src={post.image}
-            alt={post.title}
+            src={(current.image) || '/images/proyectos/CCTV.jpeg'}
+            alt={current.title}
             fill
             className="object-cover opacity-10"
           />
@@ -69,7 +106,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         <div className="relative max-w-4xl mx-auto">
           <Breadcrumb items={[
             { label: 'Blog', href: '/blog' },
-            { label: post.title }
+            { label: current.title }
           ]} />
           
           <div className="flex items-center mb-6">
@@ -84,21 +121,21 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           
           {/* Categoría */}
           <div className="mb-6">
-            <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${getCategoryColor(post.category)}`}>
-              {post.category}
+            <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${getCategoryColor(current.category)}`}>
+              {current.category}
             </span>
           </div>
 
           {/* Título */}
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary dark:text-white">
-            {post.title}
+            {current.title}
           </h1>
 
           {/* Metadatos */}
           <div className="flex items-center text-gray-600 dark:text-gray-300 space-x-6">
             <div className="flex items-center">
               <Calendar className="w-5 h-5 mr-2" />
-              <span>{new Date(post.date).toLocaleDateString('es-ES', { 
+              <span>{new Date(current.date).toLocaleDateString('es-ES', { 
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 
@@ -106,7 +143,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
             <div className="flex items-center">
               <Clock className="w-5 h-5 mr-2" />
-              <span>{post.readTime} de lectura</span>
+              <span>{current.readTime} de lectura</span>
             </div>
           </div>
         </div>
@@ -115,16 +152,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       {/* Contenido del artículo */}
       <section className="max-w-4xl mx-auto py-16 px-4">
         <article className="prose prose-lg dark:prose-invert max-w-none">
-          <div 
-            className="markdown-content"
-            dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br>') }}
-          />
+          <MDXContent />
         </article>
 
         {/* Artículos relacionados */}
         <RelatedPosts 
-          currentPost={post}
-          allPosts={blogPosts}
+          currentPost={current}
+          allPosts={allPosts}
           maxPosts={3}
         />
 
@@ -155,3 +189,4 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
+

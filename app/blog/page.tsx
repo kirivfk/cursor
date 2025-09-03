@@ -5,11 +5,10 @@ import Image from 'next/image';
 import { Calendar, ArrowRight } from 'lucide-react';
 import Breadcrumb from '../../components/Breadcrumb';
 import BlogCategories from '../../components/BlogCategories';
-import { blogPosts, getUniqueCategories } from '../../lib/blog-data';
+import { allBlogs } from 'contentlayer/generated';
+import { useMemo, useState } from 'react';
 
-// Importar datos del blog desde el archivo centralizado
-
-// Función para obtener el color de la categoría
+// Color de etiqueta por categoría
 const getCategoryColor = (category: string) => {
   switch (category) {
     case 'Seguridad':
@@ -25,17 +24,49 @@ const getCategoryColor = (category: string) => {
   }
 };
 
-import { useState } from 'react';
+type BlogCard = {
+  title: string;
+  slug: string;
+  category: string;
+  image: string;
+  date: string;
+  readTime: string;
+  excerpt: string;
+};
+
+const estimateReadTime = (text: string) => {
+  const words = text ? text.trim().split(/\s+/).length : 0;
+  const minutes = Math.max(1, Math.round(words / 200));
+  return `${minutes} min`;
+};
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState('Todas');
-  
-  const filteredPosts = activeCategory === 'Todas' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === activeCategory);
-    
-  const categories = getUniqueCategories();
-  
+
+  const allPosts: BlogCard[] = useMemo(() => {
+    return allBlogs
+      .map((p: any) => ({
+        title: p.title,
+        slug: p.slug,
+        category: p.category ?? 'General',
+        image: p.image ?? '/images/proyectos/CCTV.jpeg',
+        date: p.date,
+        readTime: estimateReadTime(p.body?.raw ?? ''),
+        excerpt: p.description,
+      }))
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }, []);
+
+  const filteredPosts = activeCategory === 'Todas'
+    ? allPosts
+    : allPosts.filter(post => post.category === activeCategory);
+
+  const categories = useMemo(() => {
+    const set = new Set<string>();
+    allPosts.forEach(p => set.add(p.category));
+    return Array.from(set);
+  }, [allPosts]);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -155,3 +186,4 @@ export default function BlogPage() {
     </div>
   );
 }
+

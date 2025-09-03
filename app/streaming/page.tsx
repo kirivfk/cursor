@@ -41,9 +41,25 @@ export default function StreamingIndexPage() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary dark:text-white">Cámaras en Directo 24h</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Accede a nuestras cámaras de streaming en pueblos de Burgos. Diseño inspirado en galerías tipo SkylineWebcams: rápido, claro y visual.
+            Accede a nuestras cámaras de streaming en pueblos de Burgos.
           </p>
         </div>
+      </section>
+
+      {/* Reproductor destacado */}
+      <section className="max-w-6xl mx-auto px-4 mt-6">
+        <div className="aspect-video w-full rounded-xl overflow-hidden border border-gray-100 dark:border-slate-700 bg-black">
+          <iframe
+            src="https://www.duartec.es/silos.php"
+            className="w-full h-full"
+            allow="encrypted-media; picture-in-picture"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-3">
+          Si el reproductor no carga, abre la emisión en una pestaña nueva:{' '}
+          <a href="https://www.duartec.es/silos.php" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">ver en duartec.es</a>
+        </p>
       </section>
 
       {/* Grid */}
