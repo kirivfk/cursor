@@ -149,41 +149,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Cámaras en directo 24h */}
-      <section className="max-w-6xl mx-auto py-16 px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">Cámaras de Streaming 24 horas</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Acceso directo a nuestras cámaras en pueblos de Burgos. Diseño tipo galería, rápido y visual.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { href: '/streaming/silos', name: 'Santo Domingo de Silos' },
-            { href: '/streaming/rabanera-del-pinar', name: 'Rabanera del Pinar' },
-            { href: '/streaming/pineda-de-la-sierra', name: 'Pineda de la Sierra' },
-            { href: '/streaming/huerta-de-arriba', name: 'Huerta de Arriba' },
-          ].map((c) => (
-            <a
-              key={c.href}
-              href={c.href}
-              className="group rounded-xl overflow-hidden bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 shadow hover:shadow-lg transition-shadow"
-            >
-              <div className="h-36 bg-gradient-to-br from-sky-200 to-blue-300 dark:from-slate-700 dark:to-slate-600 flex items-center justify-center">
-                <Camera className="w-10 h-10 text-white opacity-90" />
-              </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-primary dark:text-white group-hover:text-accent transition-colors">{c.name}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">En directo 24/7</p>
-              </div>
-            </a>
-          ))}
-        </div>
-        <div className="text-center mt-8">
-          <a href="/streaming" className="inline-block text-accent hover:underline font-semibold">Ver todas las cámaras →</a>
-        </div>
-      </section>
-
       {/* Zona de servicio */}
       <section className="max-w-6xl mx-auto py-16 px-4">
         <div className="text-center mb-12">

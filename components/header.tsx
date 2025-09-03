@@ -83,6 +83,14 @@ export default function Header() {
               </li>
               <li>
                 <Link 
+                  href="/streaming" 
+                  className="text-white hover:text-accent transition-colors font-medium"
+                >
+                  Streaming 24h
+                </Link>
+              </li>
+              <li>
+                <Link 
                   href="/blog" 
                   className="text-white hover:text-accent transition-colors font-medium"
                 >
@@ -139,6 +147,15 @@ export default function Header() {
                   className="block text-primary dark:text-white hover:text-accent dark:hover:text-accent transition-colors font-medium py-2"
                 >
                   Servicios
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/streaming" 
+                  onClick={closeMenu}
+                  className="block text-primary dark:text-white hover:text-accent dark:hover:text-accent transition-colors font-medium py-2"
+                >
+                  Streaming 24h
                 </Link>
               </li>
               <li>

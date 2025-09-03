@@ -40,6 +40,14 @@ export default function ServiciosPage() {
       icon: Zap,
       color: 'yellow',
       href: '/servicios/electricidad'
+    },
+    {
+      id: 'baja-tension',
+      title: 'Instalaciones Eléctricas BT',
+      description: 'Baja tensión: cuadros, cableado, iluminación y certificación REBT para viviendas y locales.',
+      icon: Zap,
+      color: 'yellow',
+      href: '/servicios/electricidad-baja-tension'
     }
   ];
 
