@@ -97,7 +97,7 @@ const nextConfig = {
 
   // Configuración de experimental features
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false,
     scrollRestoration: true,
   },
 
