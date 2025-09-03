@@ -1,55 +1,58 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Monitor, Camera, Volume2, Zap, ArrowRight } from 'lucide-react';
+import { allServicios } from 'contentlayer/generated';
 
 export const metadata: Metadata = {
   title: 'Servicios - Duartec Instalaciones Informáticas',
   description: 'Servicios de informática, videovigilancia, sonido y electricidad en Burgos. Instalación, mantenimiento y soporte técnico profesional.',
 };
 
+const iconBySlug: Record<string, { Icon: any; bg: string; text: string }> = {
+  informatica: { Icon: Monitor, bg: 'bg-blue-100 dark:bg-blue-900', text: 'text-blue-600' },
+  videovigilancia: { Icon: Camera, bg: 'bg-green-100 dark:bg-green-900', text: 'text-green-600' },
+  sonido: { Icon: Volume2, bg: 'bg-purple-100 dark:bg-purple-900', text: 'text-purple-600' },
+  electricidad: { Icon: Zap, bg: 'bg-yellow-100 dark:bg-yellow-900', text: 'text-yellow-600' },
+  'electricidad-baja-tension': { Icon: Zap, bg: 'bg-yellow-100 dark:bg-yellow-900', text: 'text-yellow-600' },
+};
+
+type ServicioCard = {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  Icon: any;
+  bg: string;
+  text: string;
+};
+
 export default function ServiciosPage() {
-  const servicios = [
-    {
-      id: 'informatica',
-      title: 'Informática',
-      description: 'Equipos, redes, soporte y mantenimiento para tu empresa o negocio. Soluciones a medida.',
-      icon: Monitor,
-      color: 'blue',
-      href: '/servicios/informatica'
-    },
-    {
-      id: 'videovigilancia',
-      title: 'Videovigilancia (CCTV)',
-      description: 'Instalación y gestión de sistemas de videovigilancia y seguridad para tu tranquilidad.',
-      icon: Camera,
-      color: 'green',
-      href: '/servicios/videovigilancia'
-    },
-    {
-      id: 'sonido',
-      title: 'Sonido Profesional',
-      description: 'Soluciones de audio profesional para eventos, locales comerciales y espacios públicos.',
-      icon: Volume2,
-      color: 'purple',
-      href: '/servicios/sonido'
-    },
-    {
-      id: 'electricidad',
-      title: 'Electricidad',
-      description: 'Instalaciones eléctricas, cableados y soluciones energéticas para todo tipo de espacios.',
-      icon: Zap,
-      color: 'yellow',
-      href: '/servicios/electricidad'
-    },
-    {
-      id: 'baja-tension',
+  const fromContent: ServicioCard[] = allServicios.map((s: any) => {
+    const mapping = iconBySlug[s.slug] ?? { Icon: Monitor, bg: 'bg-gray-100 dark:bg-slate-700', text: 'text-gray-700' };
+    return {
+      id: s.slug as string,
+      title: s.title as string,
+      description: s.description as string,
+      href: `/servicios/${s.slug}`,
+      Icon: mapping.Icon,
+      bg: mapping.bg,
+      text: mapping.text,
+    };
+  });
+
+  const servicios: ServicioCard[] = [...fromContent];
+  if (!servicios.find((s) => s.id === 'electricidad-baja-tension')) {
+    const m = iconBySlug['electricidad-baja-tension'];
+    servicios.push({
+      id: 'electricidad-baja-tension',
       title: 'Instalaciones Eléctricas BT',
       description: 'Baja tensión: cuadros, cableado, iluminación y certificación REBT para viviendas y locales.',
-      icon: Zap,
-      color: 'yellow',
-      href: '/servicios/electricidad-baja-tension'
-    }
-  ];
+      href: '/servicios/electricidad-baja-tension',
+      Icon: m.Icon,
+      bg: m.bg,
+      text: m.text,
+    });
+  }
 
   return (
     <div className="min-h-screen">
@@ -69,29 +72,26 @@ export default function ServiciosPage() {
       {/* Servicios Grid */}
       <section className="max-w-6xl mx-auto py-16 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {servicios.map((servicio) => {
-            const IconComponent = servicio.icon;
-            return (
-              <div key={servicio.id} className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-200 border border-gray-100 dark:border-slate-700">
-                <div className={`w-16 h-16 bg-${servicio.color}-100 dark:bg-${servicio.color}-900 rounded-lg flex items-center justify-center mb-6`}>
-                  <IconComponent className={`w-8 h-8 text-${servicio.color}-600`} />
-                </div>
-                <h3 className="text-2xl font-semibold mb-4 text-primary dark:text-white">
-                  {servicio.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">
-                  {servicio.description}
-                </p>
-                <Link 
-                  href={servicio.href}
-                  className="inline-flex items-center text-accent hover:text-accent-700 font-semibold transition-colors"
-                >
-                  Ver detalles
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
+          {servicios.map((servicio) => (
+            <div key={servicio.id} className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-200 border border-gray-100 dark:border-slate-700">
+              <div className={`w-16 h-16 ${servicio.bg} rounded-lg flex items-center justify-center mb-6`}>
+                <servicio.Icon className={`w-8 h-8 ${servicio.text}`} />
               </div>
-            );
-          })}
+              <h3 className="text-2xl font-semibold mb-4 text-primary dark:text-white">
+                {servicio.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">
+                {servicio.description}
+              </p>
+              <Link 
+                href={servicio.href}
+                className="inline-flex items-center text-accent hover:text-accent-700 font-semibold transition-colors"
+              >
+                Ver detalles
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -115,3 +115,4 @@ export default function ServiciosPage() {
     </div>
   );
 }
+
