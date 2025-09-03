@@ -24,9 +24,9 @@ export default function Header() {
       <div className="bg-accent text-white py-2 px-4">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
           <div className="flex items-center gap-4 mb-2 sm:mb-0">
-            <a href="tel:+34947000000" className="flex items-center gap-1 hover:underline">
+            <a href="tel:+34947256430" className="flex items-center gap-1 hover:underline">
               <Phone className="w-4 h-4" />
-              <span>947 000 000</span>
+              <span>947 256 430</span>
             </a>
             <a href="mailto:info@duartec.es" className="flex items-center gap-1 hover:underline">
               <Mail className="w-4 h-4" />

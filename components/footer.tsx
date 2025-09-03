@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
@@ -10,9 +11,14 @@ export default function Footer() {
           {/* Información de la empresa */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">D</span>
-              </div>
+              <Image 
+                src="/images/logo.png"
+                alt="Duartec Instalaciones Informáticas"
+                width={56}
+                height={56}
+                className="h-14 w-auto"
+                loading="lazy"
+              />
               <div>
                 <h3 className="font-bold text-xl">Duartec</h3>
                 <p className="text-sm text-gray-400">Instalaciones Informáticas</p>
@@ -76,8 +82,8 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-accent" />
-                <a href="tel:+34947000000" className="text-gray-300 hover:text-accent transition-colors">
-                  947 000 000
+                <a href="tel:+34947256430" className="text-gray-300 hover:text-accent transition-colors">
+                  947 256 430
                 </a>
               </div>
               <div className="flex items-center gap-2">
