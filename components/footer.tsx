@@ -13,16 +13,12 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <Image 
                 src="/images/logo.png"
-                alt="Duartec Instalaciones Informáticas"
+                alt="Duartec"
                 width={56}
                 height={56}
                 className="h-14 w-auto"
                 loading="lazy"
               />
-              <div>
-                <h3 className="font-bold text-xl">Duartec</h3>
-                <p className="text-sm text-gray-400">Instalaciones Informáticas</p>
-              </div>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Más de 10 años de experiencia en instalaciones informáticas, videovigilancia, 
