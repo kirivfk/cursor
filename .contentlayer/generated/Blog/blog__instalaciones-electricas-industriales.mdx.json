@@ -1,0 +1,22 @@
+{
+  "title": "Instalaciones El�ctricas Industriales: Dise�o, Implementaci�n y Mantenimiento",
+  "date": "2024-12-28T00:00:00.000Z",
+  "description": "Gu�a completa sobre dise�o, instalaci�n y mantenimiento de sistemas el�ctricos industriales, incluyendo normativas, equipos de protecci�n y eficiencia energ�tica.",
+  "slug": "instalaciones-electricas-industriales",
+  "category": "Electricidad",
+  "image": "/images/proyectos/electricidad.jpeg",
+  "body": {
+    "raw": "\n# Instalaciones El�ctricas Industriales: Dise�o, Implementaci�n y Mantenimiento\n\nLas instalaciones el�ctricas industriales son sistemas complejos que requieren un dise�o cuidadoso, implementaci�n profesional y mantenimiento continuo para garantizar la seguridad, eficiencia y fiabilidad operativa. En este art�culo abordamos los aspectos fundamentales de estos sistemas cr�ticos.\n\n... (contenido)\r\n",
+    "html": "<h1>Instalaciones El�ctricas Industriales: Dise�o, Implementaci�n y Mantenimiento</h1>\n<p>Las instalaciones el�ctricas industriales son sistemas complejos que requieren un dise�o cuidadoso, implementaci�n profesional y mantenimiento continuo para garantizar la seguridad, eficiencia y fiabilidad operativa. En este art�culo abordamos los aspectos fundamentales de estos sistemas cr�ticos.</p>\n<p>... (contenido)</p>"
+  },
+  "_id": "blog/instalaciones-electricas-industriales.mdx",
+  "_raw": {
+    "sourceFilePath": "blog/instalaciones-electricas-industriales.mdx",
+    "sourceFileName": "instalaciones-electricas-industriales.mdx",
+    "sourceFileDir": "blog",
+    "contentType": "mdx",
+    "flattenedPath": "blog/instalaciones-electricas-industriales"
+  },
+  "type": "Blog",
+  "url": "/blog/instalaciones-electricas-industriales"
+}
