@@ -28,7 +28,8 @@
     "test:e2e": "playwright test",
     "analyze": "cross-env ANALYZE=true next build",
     "sitemap": "next-sitemap",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "gen:article": "python tools/generate_article.py --topic"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^15.5.2",

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { Monitor, Camera, Volume2, Zap, Shield, Clock, Users, MapPin, Phone } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
@@ -173,21 +174,27 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { href: '/streaming/silos', name: 'Santo Domingo de Silos' },
-            { href: '/streaming/rabanera-del-pinar', name: 'Rabanera del Pinar' },
-            { href: '/streaming/pineda-de-la-sierra', name: 'Pineda de la Sierra' },
-            { href: '/streaming/huerta-de-arriba', name: 'Huerta de Arriba' },
+            { href: '/streaming/silos', name: 'Santo Domingo de Silos', youtubeId: 'czwL7LgjyjU' },
+            { href: '/streaming/rabanera-del-pinar', name: 'Rabanera del Pinar', youtubeId: '2FLLNsHmgxc' },
+            { href: '/streaming/pineda-de-la-sierra', name: 'Pineda de la Sierra', youtubeId: 'MqU3cNr22XQ' },
+            { href: '/streaming/huerta-de-arriba', name: 'Huerta de Arriba', youtubeId: 'Kv2HeXZXWaw' },
           ].map((c) => (
             <a
               key={c.href}
               href={c.href}
-              className="group rounded-xl overflow-hidden bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 shadow hover:shadow-lg transition-shadow"
+              className="group rounded-xl overflow-hidden bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 shadow hover:shadow-lg transition-all"
             >
-              <div className="h-36 bg-gradient-to-br from-sky-200 to-blue-300 dark:from-slate-700 dark:to-slate-600 flex items-center justify-center">
-                <Camera className="w-10 h-10 text-white opacity-90" />
+              <div className="relative h-40">
+                <Image
+                  src={`https://img.youtube.com/vi/${c.youtubeId}/hqdefault.jpg`}
+                  alt={c.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">EN DIRECTO</span>
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-primary dark:text-white group-hover:text-accent transition-colors">{c.name}</h3>
+                <h3 className="font-semibold text-primary dark:text-white group-hover:text-accent transition-colors line-clamp-1">{c.name}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">En directo 24/7</p>
               </div>
             </a>

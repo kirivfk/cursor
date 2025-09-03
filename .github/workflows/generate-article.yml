@@ -1,0 +1,116 @@
+name: Generate Article from Issue
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure secrets exist
+        run: |
+          if [ -z "${OPENAI_API_KEY}" ]; then
+            echo "::error::Missing OPENAI_API_KEY secret"; exit 1; fi
+          if [ -z "${GEMINI_API_KEY}" ]; then
+            echo "::error::Missing GEMINI_API_KEY secret"; exit 1; fi
+
+      - name: Derive topic and params from issue
+        id: parse
+        shell: bash
+        run: |
+          TITLE='${{ github.event.issue.title }}'
+          BODY='${{ github.event.issue.body }}'
+          HAS_LABEL=false
+          if [ "${{ github.event.action }}" = "labeled" ] && [ "${{ github.event.label.name }}" = "generate-article" ]; then
+            HAS_LABEL=true
+          fi
+          shopt -s nocasematch
+          if [[ "$TITLE" =~ ^(articulo|artículo|nuevo artículo|nuevo articulo)[:]?[[:space:]]+(.*)$ ]]; then
+            TOPIC="${BASH_REMATCH[2]}"
+          elif $HAS_LABEL; then
+            TOPIC=$(printf "%s" "$BODY" | head -n1)
+          else
+            echo "skip=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          shopt -u nocasematch
+
+          STYLE=$(printf "%s" "$BODY" | grep -iE '^estilo:' | head -n1 | cut -d: -f2- | xargs)
+          ACCENT=$(printf "%s" "$BODY" | grep -iE '^color(:| principal:)?' | head -n1 | cut -d: -f2- | xargs)
+          DETAILS=$(printf "%s" "$BODY" | grep -iE '^detalles:' | head -n1 | cut -d: -f2- | xargs)
+          CATEGORY=$(printf "%s" "$BODY" | grep -iE '^categoria:' | head -n1 | cut -d: -f2- | xargs)
+          [ -z "$STYLE" ] && STYLE="fotográfico"
+          [ -z "$ACCENT" ] && ACCENT="azul"
+
+          echo "topic=$TOPIC" >> $GITHUB_OUTPUT
+          echo "style=$STYLE" >> $GITHUB_OUTPUT
+          echo "accent=$ACCENT" >> $GITHUB_OUTPUT
+          echo "details=$DETAILS" >> $GITHUB_OUTPUT
+          echo "category=$CATEGORY" >> $GITHUB_OUTPUT
+          echo "skip=false" >> $GITHUB_OUTPUT
+
+      - name: Setup Python
+        if: steps.parse.outputs.skip == 'false'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python deps
+        if: steps.parse.outputs.skip == 'false'
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade google-genai openai pyyaml python-slugify
+
+      - name: Generate article and images
+        if: steps.parse.outputs.skip == 'false'
+        run: |
+          python tools/generate_article.py \
+            --topic "${{ steps.parse.outputs.topic }}" \
+            --style "${{ steps.parse.outputs.style }}" \
+            --accent "${{ steps.parse.outputs.accent }}" \
+            --details "${{ steps.parse.outputs.details }}" \
+            $( [ -n "${{ steps.parse.outputs.category }}" ] && echo --category "${{ steps.parse.outputs.category }}" )
+
+      - name: Commit changes
+        if: steps.parse.outputs.skip == 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/blog public/images/blog || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"; exit 0; fi
+          git commit -m "chore(content): generate article '${{ steps.parse.outputs.topic }}'"
+          git push
+
+      - name: Comment with result
+        if: steps.parse.outputs.skip == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const topic = `${{ steps.parse.outputs.topic }}`;
+            const body = `Artículo generado automáticamente para: **${topic}**.
+
+- Revisa la carpeta \
+\`content/blog\` y \
+\`public/images/blog\`.
+
+Si necesitas ajustes (categoría, estilo, color), edita el issue y vuelve a ejecutarlo.`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+
