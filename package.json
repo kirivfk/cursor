@@ -86,5 +86,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "@opentelemetry/semantic-conventions": "1.28.0"
   }
 }
