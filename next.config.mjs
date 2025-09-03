@@ -51,13 +51,7 @@ const nextConfig = {
 
   // Configuración de redirecciones
   async redirects() {
-    return [
-      {
-        source: '/servicios',
-        destination: '/servicios/informatica',
-        permanent: false,
-      },
-    ];
+    return [];
   },
 
   // Configuración de rewrites

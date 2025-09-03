@@ -27,6 +27,7 @@ const Blog = defineDocumentType(() => ({
     description: { type: 'string', required: true },
     slug: { type: 'string', required: true },
     category: { type: 'string', required: false },
+    image: { type: 'string', required: false },
     schema: { type: 'json', required: false },
   },
   computedFields: {
