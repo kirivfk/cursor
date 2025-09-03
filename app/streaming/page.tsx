@@ -31,19 +31,7 @@ export default function StreamingIndexPage() {
         </div>
       </section>
 
-      {/* Reproductor destacado (YouTube) */}
-      <section className="max-w-6xl mx-auto px-4 mt-6">
-        <div className="relative w-full h-[60vh] min-h-[380px] max-h-[80vh] rounded-xl overflow-hidden border border-gray-100 dark:border-slate-700 bg-black">
-          <iframe
-            className="absolute inset-0 w-full h-full"
-            src="https://www.youtube.com/embed/2FLLNsHmgxc"
-            title="Rabanera del Pinar"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-        </div>
-      </section>
+      {/* Sin reproductor destacado: solo miniaturas */}
 
       {/* Grid */}
       <section className="max-w-6xl mx-auto py-12 px-4">

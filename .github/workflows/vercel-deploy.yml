@@ -29,7 +29,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Pull Vercel environment (preview)
         run: |
@@ -63,7 +63,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Pull Vercel environment (production)
         run: |
@@ -82,4 +82,3 @@ jobs:
             --token=${{ secrets.VERCEL_TOKEN }} \
             --org-id=${{ secrets.VERCEL_ORG_ID }} \
             --project-id=${{ secrets.VERCEL_PROJECT_ID }}
-
