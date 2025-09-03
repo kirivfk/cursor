@@ -80,7 +80,7 @@ export default function ContactoPage() {
                     name="telefono"
                     required
                     className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent dark:bg-slate-700 dark:text-white"
-                    placeholder="947 000 000"
+                    placeholder="947 256 430"
                   />
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function ContactoPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-primary dark:text-white">Teléfono</h3>
-                    <p className="text-gray-600 dark:text-gray-300">947 000 000</p>
+                    <p className="text-gray-600 dark:text-gray-300">947 256 430</p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Emergencias 24/7</p>
                   </div>
                 </div>

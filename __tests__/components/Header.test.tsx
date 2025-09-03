@@ -21,7 +21,7 @@ describe('Header Component', () => {
 
   it('renders contact information', () => {
     render(<Header />);
-    expect(screen.getByText('947 000 000')).toBeInTheDocument();
+    expect(screen.getByText('947 256 430')).toBeInTheDocument();
     expect(screen.getByText('info@duartec.es')).toBeInTheDocument();
   });
 });
