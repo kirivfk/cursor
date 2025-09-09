@@ -32,22 +32,23 @@
     "gen:article": "python tools/generate_article.py --topic"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^14.2.32",
-    "@opentelemetry/api": "^1.4.1",
-    "@opentelemetry/sdk-node": "^0.203.0",
+    "@next/bundle-analyzer": "^15.5.2",
+    "@supabase/supabase-js": "^2.57.2",
     "@svgr/webpack": "^8.1.0",
     "@types/react-dom": "^18.0.0",
     "contentlayer": "^0.3.4",
     "critters": "^0.0.23",
+    "drizzle-orm": "^0.44.5",
     "framer-motion": "^10.0.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.263.0",
-    "next": "^14.2.32",
+    "next": "^15.5.2",
     "next-contentlayer": "^0.3.4",
     "next-intl": "^3.0.0",
     "next-seo": "^6.0.0",
     "next-sitemap": "^4.0.0",
     "postcss": "^8.1.0",
+    "postgres": "^3.4.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
@@ -64,11 +65,12 @@
     "@testing-library/react": "^14.3.1",
     "@types/jest": "^29.0.0",
     "@types/leaflet": "^1.9.20",
+    "@types/node": "^24.3.1",
     "@types/react": "^18.2.0",
     "autoprefixer": "^10.4.21",
     "cross-env": "^7.0.3",
     "eslint": "^8.0.0",
-    "eslint-config-next": "14.2.32",
+    "eslint-config-next": "15.5.2",
     "husky": "^8.0.0",
     "jest": "^29.0.0",
     "jest-environment-jsdom": "^29.0.0",
@@ -92,7 +94,5 @@
       "last 1 safari version"
     ]
   },
-  "resolutions": {
-    "@opentelemetry/semantic-conventions": "1.28.0"
-  }
+  "resolutions": {}
 }
