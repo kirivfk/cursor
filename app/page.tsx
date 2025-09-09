@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Monitor, Camera, Volume2, Zap, Shield, Clock, Users, MapPin, Phone } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
-const MapCamaras = dynamic(() => import('../components/MapCamaras'), { ssr: false });
+const MapCamaras = dynamic(() => import('../components/MapCamaras'));
 
 export const metadata: Metadata = {
   title: 'Inicio',
